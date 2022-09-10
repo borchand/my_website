@@ -1,0 +1,50 @@
+.menu-icon{
+    margin: 5px;
+    color: lightgray;
+    cursor: pointer;
+}
+.menu{
+    background-color: lightgray;
+    width: 100px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    border-radius: 0px 10px 10px 0px;
+}
+.menu a{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    width: 100px;
+    color:black;
+    text-decoration: none;
+}
+.menu a:hover{
+    background-color: green;
+}
+
+/* animation for showing menu */
+@-webkit-keyframes SHOW-BOX {
+    0%   { width: 0px; }
+    100% { width: 100px; }
+}
+@-moz-keyframes SHOW-BOX {
+    0%   { width: 0px; }
+    100% { width: 100px; }
+}
+@-o-keyframes SHOW-BOX {
+    0%   { width: 0px; }
+    100% { width: 100px; }
+}
+@keyframes SHOW-BOX {
+    0%   { width: 0px; }
+    100% { width: 100px; }
+}
+
+.show-menu {
+    -webkit-animation: SHOW-BOX 1s ease;
+    -moz-animation: SHOW-BOX 1s ease;
+    -o-animation: SHOW-BOX 1s ease;
+    animation: SHOW-BOX 1s ease;
+}
