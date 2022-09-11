@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./Sites/home.js";
-import Test from "./Sites/test.js";
+import Test from "./Sites/projects";
 import Layout from "./Sites/layout.js";
 import NoPage from "./Sites/noPage.js";
 
