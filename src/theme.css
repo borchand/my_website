@@ -3,14 +3,14 @@
   --text-primary: black;
   --secondary: #CCF2F4;
   --third: #A4EBF3;
-  --opposite: #AAAAAA;
+  --opposite: #2C3333;
 }
 [data-theme='dark'] {
   --background: #2C3333;
   --text-primary: lightgray;
   --secondary: #395B64;
   --third: #A5C9CA;
-  --opposite: #E7F6F2;
+  --opposite: #F4F9F9;
 }
 .theme {
   color: var(--text-primary);
