@@ -1,10 +1,10 @@
 .menu-icon{
     margin: 5px;
-    color: lightgray;
+    color: var(--background);
     cursor: pointer;
 }
 .menu{
-    background-color: lightgray;
+    background-color: var(--background);
     width: 100px;
     overflow: hidden;
     display: flex;
@@ -12,16 +12,19 @@
     position: fixed;
     border-radius: 0px 10px 10px 0px;
 }
-.menu a{
+.menu a, .menu button{
     display: flex;
     justify-content: center;
     padding: 10px 0;
     width: 100px;
-    color:black;
+    color: var(--text-primary);
     text-decoration: none;
+    background-color: transparent;
+    border: none;
 }
-.menu a:hover{
+.menu a:hover, .menu button:hover{
     background-color: green;
+    cursor: pointer;
 }
 
 /* animation for showing menu */

@@ -1,0 +1,19 @@
+:root {
+  --background: #F4F9F9;
+  --text-primary: black;
+  --secondary: #CCF2F4;
+  --third: #A4EBF3;
+  --opposite: #AAAAAA;
+}
+[data-theme='dark'] {
+  --background: #2C3333;
+  --text-primary: lightgray;
+  --secondary: #395B64;
+  --third: #A5C9CA;
+  --opposite: #E7F6F2;
+}
+.theme {
+  color: var(--text-primary);
+  background-color: var(--background);
+}
+  
