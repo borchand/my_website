@@ -25,9 +25,8 @@ export default function Index() {
             />
         </div>
         <div className="profile-social">
-            <SocialIcon url="https://www.linkedin.com/in/sebastian-borch-andersen" />
-            <SocialIcon url="https://github.com/borchand" />
-            <SocialIcon url="/test"/>
+            <SocialIcon url="https://www.linkedin.com/in/sebastian-borch-andersen" fgColor="#F4F9F9"/>
+            <SocialIcon url="https://github.com/borchand" fgColor="#F4F9F9"/>
         </div>
       </div>
     </div>
