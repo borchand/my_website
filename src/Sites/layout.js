@@ -28,7 +28,7 @@ const Layout = () => {
         {shouldShowMenu ? 
           <div className="menu show-menu" onClick={() => showMenu()}>
             <Link to="/">Home</Link>
-            <Link to="/test">Test</Link>
+            <Link to="/test">Projects</Link>
             <button onClick={switchTheme}>Switch theme</button>
           </div>
         : null}
@@ -45,11 +45,11 @@ const Layout = () => {
           <Link to="/test">
             <div className="pc-menu-item">
               <div className="pc-menu-item-title">
-                Test
+                Projects
               </div>
             </div>
           </Link>
-          <a href={CV} without rel="noopener noreferrer" target="_blank">
+          <a href={CV} rel="noopener noreferrer" target="_blank">
             <div className="pc-menu-item menu-icons">
               <div className="pc-menu-item-title">
                   <FaRegFilePdf/>
@@ -67,8 +67,9 @@ const Layout = () => {
           </div>
         </div>      
       </BrowserView>
-
-      <Outlet />
+      <div className="gradient-background">
+        <Outlet />
+      </div>
     </div>
   )
 };
