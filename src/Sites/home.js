@@ -7,7 +7,6 @@ import "./home.css";
 export default function Index() {
 
   return (
-    <div className="gradient-background">
       <div className="main-container">
         <div className="profile">
           <div className="profile-photo"></div>
@@ -28,10 +27,7 @@ export default function Index() {
             <SocialIcon url="https://www.linkedin.com/in/sebastian-borch-andersen" fgColor="#F4F9F9"/>
             <SocialIcon url="https://github.com/borchand" fgColor="#F4F9F9"/>
         </div>
-      </div>
-    </div>
-
-    
+      </div>    
   );
 }
 

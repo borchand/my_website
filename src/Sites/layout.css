@@ -1,3 +1,15 @@
+.gradient-background {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -99;
+    background: linear-gradient(300deg,#040F0F,#248232,#2BA84A);
+    background-size: 180% 180%;
+    animation: gradient-animation 14s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .menu-icon{
     margin: 5px;
     color: var(--background);
