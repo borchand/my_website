@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet, Link } from "react-router-dom";
 import "./layout.css";
 import "../theme.css";
+import { Sling as Hamburger } from 'hamburger-react'
 import { VscThreeBars } from 'react-icons/vsc';
 import useLocalStorage from 'use-local-storage'
 import {IoMoon, IoSunny} from "react-icons/io5"
@@ -24,12 +25,18 @@ const Layout = () => {
   return (
     <div data-theme={theme}>
       <MobileView>
-        <VscThreeBars className="menu-icon" size={25} onClick={() => showMenu()}/>
+        <Hamburger toggled={shouldShowMenu} toggle={() => showMenu()}/>
         {shouldShowMenu ? 
-          <div className="menu show-menu" onClick={() => showMenu()}>
-            <Link to="/">Home</Link>
-            <Link to="/test">Projects</Link>
-            <button onClick={switchTheme}>Switch theme</button>
+          <div className="menu show-menu">
+            <Link to="/" onClick={() => showMenu()}>Home</Link>
+            <Link to="/test" onClick={() => showMenu()}>Projects</Link>
+            <button onClick={switchTheme}>
+              {theme === "dark"? 
+                  <IoSunny/>
+                :
+                  <IoMoon/>
+                }
+            </button>
           </div>
         : null}
       </MobileView>
