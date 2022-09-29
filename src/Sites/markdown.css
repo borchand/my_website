@@ -1,0 +1,11 @@
+.markdown{
+    position: fixed;
+    top: 70px; left: 5%; bottom: 40px;
+    width: 90%; 
+    z-index: -99;
+    flex-direction: column;
+    background-color : var(--background);
+    color : var(--opposite);
+    border-radius: 20px;
+    padding: 5px;
+}

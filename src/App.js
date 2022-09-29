@@ -4,6 +4,7 @@ import "./App.css";
 import Home from "./Sites/home.js";
 import Test from "./Sites/projects";
 import Layout from "./Sites/layout.js";
+import Markdown from "./Sites/markdown";
 import NoPage from "./Sites/noPage.js";
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/" element={<Layout />} >
           <Route index element={<Home />} />
           <Route path="/test" element={<Test />} />
+          <Route path="/markdown" element={<Markdown />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

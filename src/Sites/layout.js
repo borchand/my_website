@@ -7,7 +7,7 @@ import useLocalStorage from 'use-local-storage'
 import {IoMoon, IoSunny} from "react-icons/io5"
 import {FaRegFilePdf} from "react-icons/fa"
 import CV from '../Documents/cv.pdf';
-import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
+import { BrowserView, MobileView} from 'react-device-detect';
 
 const Layout = () => {
   const [shouldShowMenu, setShouldShowMenu] = React.useState(false)

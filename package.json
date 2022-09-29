@@ -8,10 +8,13 @@
     "react-device-detect": "^2.2.2",
     "react-dom": "^18.1.0",
     "react-icons": "^4.4.0",
+    "react-markdown": "^8.0.3",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-simple-typewriter": "^4.0.2",
     "react-social-icons": "^5.14.0",
+    "rehype-katex": "^6.0.2",
+    "remark-math": "^5.1.1",
     "use-local-storage": "^2.3.6",
     "web-vitals": "^2.1.4"
   },

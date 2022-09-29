@@ -1,4 +1,5 @@
 import React from "react";
+
 import './projects.css';
 import HighlightedProject from "../Components/HighlightedProjects.js"
 import {cardsData} from '../Data/HighligtedProjects';

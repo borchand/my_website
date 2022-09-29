@@ -1,5 +1,7 @@
 import * as React from 'react';
 import './HighlightedProjects.css';
+import { Link } from "react-router-dom";
+
 import { SocialIcon } from 'react-social-icons';
 
 const ExpandingCards = ({data}) => {
@@ -19,10 +21,19 @@ const ExpandingCards = ({data}) => {
             <h3 className={`${activeId === card.id ? '' : 'vertical'}`}>
               {card.title}
               {activeId === card.id ? 
-              <SocialIcon url="https://github.com/borchand" fgColor="#F4F9F9" className="github"/> :
-              null
+                <SocialIcon url="https://github.com/borchand" target="_blank" fgColor="#F4F9F9" className="github"/> 
+                : null
               }
             </h3>
+            {activeId === card.id ? 
+              <div className="description">
+                <Link to="/markdown">
+                  Read more
+                </Link>
+              </div>
+            : null}
+
+
           </div>
         ))
       }
