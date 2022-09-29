@@ -77,7 +77,9 @@
 .menu a{
     border-bottom: 1px solid var(--opposite);
 }
-
+.hamburger-react{
+    color: var(--background);
+}
 /* animation for showing menu */
 @-webkit-keyframes SHOW-BOX {
     0%   { width: 0px; }
