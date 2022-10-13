@@ -1,19 +1,37 @@
-import React from "react";
+import React, {useState} from "react";
 import { Outlet, Link } from "react-router-dom";
 import "./layout.css";
 import "../theme.css";
 import { Sling as Hamburger } from 'hamburger-react'
-import { VscThreeBars } from 'react-icons/vsc';
 import useLocalStorage from 'use-local-storage'
 import {IoMoon, IoSunny} from "react-icons/io5"
 import {FaRegFilePdf} from "react-icons/fa"
 import CV from '../Documents/cv.pdf';
-import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
+import { BrowserView, MobileView } from 'react-device-detect';
+
 
 const Layout = () => {
-  const [shouldShowMenu, setShouldShowMenu] = React.useState(false)
-  
-  
+  const [shouldShowMenu, setShouldShowMenu] = useState(false)
+
+  const scriptAlreadyExists = () => 
+  document.querySelector('script#fb-sdk') !== null
+
+
+  const appendSdkScript = () => {
+    const script = document.createElement('script')
+    script.id = 'fb-sdk'
+    script.src = '/dots.js'
+    script.async = false
+    script.defer = true
+    script.crossOrigin = 'anonymous'
+    document.body.append(script)
+  };
+  React.useEffect(() => {
+    if (!scriptAlreadyExists()) {
+      appendSdkScript()
+    }
+  }, []);
+
   const showMenu = () => setShouldShowMenu(!shouldShowMenu)
 
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -74,9 +92,11 @@ const Layout = () => {
           </div>
         </div>      
       </BrowserView>
-      <div className="gradient-background">
+      <div className="content">
         <Outlet />
       </div>
+      <div id="canvas-shapes"></div>
+      
     </div>
   )
 };
