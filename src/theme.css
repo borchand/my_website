@@ -1,16 +1,16 @@
 :root {
-  --background: #F4F9F9;
+  --background: #dadada;
   --text-primary: black;
   --secondary: #CCF2F4;
   --third: #A4EBF3;
-  --opposite: #2C3333;
+  --opposite: #999999;
 }
 [data-theme='dark'] {
   --background: #2C3333;
   --text-primary: lightgray;
   --secondary: #395B64;
   --third: #A5C9CA;
-  --opposite: #F4F9F9;
+  --opposite: #717171;
 }
 .theme {
   color: var(--text-primary);

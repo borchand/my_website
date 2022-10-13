@@ -6,7 +6,7 @@
   /* animation-fill-mode: forwards; */
   animation-fill-mode: forwards;  
 
-  background-color: var(--background);
+  background-color: var(--opposite);
   color: var(--text-primary);
 }
 
