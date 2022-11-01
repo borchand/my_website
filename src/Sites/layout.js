@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { Outlet, Link } from "react-router-dom";
 import "./layout.css";
 import "../theme.css";
+import { Menu } from 'primereact/menu';
 import { Sling as Hamburger } from 'hamburger-react'
 import useLocalStorage from 'use-local-storage'
 import {IoMoon, IoSunny} from "react-icons/io5"
@@ -11,38 +12,38 @@ import { BrowserView, MobileView } from 'react-device-detect';
 
 
 const Layout = () => {
-  const [shouldShowMenu, setShouldShowMenu] = useState(false)
+  const shouldShowMenu = Boolean(false)
 
-  const scriptAlreadyExists = () => 
-  document.querySelector('script#fb-sdk') !== null
-
-
-  const appendSdkScript = () => {
-    const script = document.createElement('script')
-    script.id = 'fb-sdk'
-    script.src = '/dots.js'
-    script.async = false
-    script.defer = true
-    script.crossOrigin = 'anonymous'
-    document.body.append(script)
-  };
-  React.useEffect(() => {
-    if (!scriptAlreadyExists()) {
-      appendSdkScript()
-    }
-  }, []);
-
-  const showMenu = () => setShouldShowMenu(!shouldShowMenu)
-
+  const handle = useFullScreenHandle();
+  
+  const showMenu = () => {
+    setShouldShowMenu(!shouldShowMenu)
+  }
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
 
   const switchTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   }
+  let items = [
+    {label: 'New', icon: 'pi pi-fw pi-plus'},
+    {label: 'Delete', icon: 'pi pi-fw pi-trash'}
+];
   return (
     <div data-theme={theme}>
-      <MobileView>
+      <div className="menu">
+        <Hamburger toggled={shouldShowMenu} toggle={() => showMenu()} />
+      </div>
+      <button onClick={handle.enter}style={{zIndex:999}}>test</button>
+      {/* {shouldShowMenu ? 
+        <div className="menu-content" >
+            <a>home</a>
+            <a>home</a>
+        </div>
+      : null} */}
+      <Menu model={items} />
+
+      {/* <MobileView>
         <Hamburger toggled={shouldShowMenu} toggle={() => showMenu()}/>
         {shouldShowMenu ? 
           <div className="menu show-menu">
@@ -91,11 +92,8 @@ const Layout = () => {
             </div>
           </div>
         </div>      
-      </BrowserView>
-      <div className="content">
-        <Outlet />
-      </div>
-      <div id="canvas-shapes"></div>
+      </BrowserView> */}
+      {/* <Outlet /> */}
       
     </div>
   )

@@ -1,69 +1,60 @@
-.main-container{
-  border-radius: 20px;
-  width: 60px;
-  height: 60px;
-  animation: anime 3s cubic-bezier(0.16, 1, 0.3, 1);
-  /* animation-fill-mode: forwards; */
-  animation-fill-mode: forwards;  
-
-  background-color: var(--opposite);
-  color: var(--text-primary);
+/* new */
+.submarine{
+  position: fixed;
+  top: 0; left: 0;
+  width : 800px; height : 100%;
 }
 
+.home-container{
+  position: fixed;
+  top: 0; right: 0;
+  width: calc(100% - 800px); height : 100%;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+    inset -6px -6px 10px 0 var(--background);
+}
 .profile{
-  position: relative;
-  top: -100px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+.profile p{
+  font-family: 'Trebuchet MS', sans-serif;
+  margin-top: 20px;
+  font-size: 24px;
+  animation: scale 2s ease-in-out forwards;
+}
+
 .profile-photo{
   background-image: url("../Images/profile.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 200px; height: 200px;
-  border-radius: 20px;
-  z-index: 99;
-  animation: scale 3s ease-in-out forwards;
+  border-radius: 100%;
+  animation: scale 2s ease-in-out forwards;
 }
 
-.profile-typewriter{ 
-  position: relative;
-  visibility: hidden;
-  top: -90px;
-  width:100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: showTypewriter 1s ease-in-out forwards;
-  animation-delay: 3s;
-}
 .profile-social{
-  position: relative;
-  top: -40px;
+  position: fixed;
+  bottom: 20px;
   width:100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap:4rem;
   animation: bounce .5s ease-in-out forwards;
-  animation-delay: 3s;
+  animation-delay: 2s;
 }
 .profile-social svg{
   visibility: hidden;
   animation: socialScale 1s ease-in-out forwards;
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
-@keyframes showTypewriter {
-  from{
-    visibility: hidden;
 
-  }
-  to{
-    visibility: visible;
-  }
-}
 @keyframes socialScale {
   0%{
     transform: scale(0);
@@ -93,37 +84,6 @@
   100% { transform: scale(1);}
 }
 
-@keyframes anime {
-  0% {
-  width: 60px;
-  height: 60px;
-  overflow: hidden;
-
-  }
-  25% {
-  width: 60px;
-  height: 60px;
-  overflow: hidden;
-  }
-  50% {
-  width: 60px;
-  height: 240px;
-  overflow: hidden;
-
-  }
-  100% {
-  width: 480px;
-  height: 240px;  
-  }
-}
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+@media (max-width: 1200px) {
+  .home-container { width: 100% }
 }

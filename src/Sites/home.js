@@ -1,33 +1,28 @@
 import React from "react";
 import { Typewriter } from 'react-simple-typewriter'
 import { SocialIcon } from 'react-social-icons';
-
+import Submarine  from '../Components/Submarine.js';
 import "./home.css";
+import image from "../Images/profile.jpeg";
 
 export default function Index() {
 
   return (
-      <div className="main-container">
+    <div className="home">
+      <div className="submarine">
+        <Submarine />
+      </div>
+      <div className="home-container">
         <div className="profile">
           <div className="profile-photo"></div>
-        </div>
-        <div className="profile-typewriter">
-          Hi, I'm&nbsp;
-          <Typewriter
-              words={['Sebastian', 'a data scientist student', 'a programmer']}
-              loop={5}
-              cursor
-              cursorStyle='_'
-              typeSpeed={100}
-              deleteSpeed={50}
-              delaySpeed={3000}
-            />
+          <p>Sebastian Borch Andersen</p>
         </div>
         <div className="profile-social">
-            <SocialIcon url="https://www.linkedin.com/in/sebastian-borch-andersen" fgColor="#F4F9F9"/>
-            <SocialIcon url="https://github.com/borchand" fgColor="#F4F9F9"/>
+          <SocialIcon url="https://www.linkedin.com/in/sebastian-borch-andersen" fgColor="#F4F9F9"/>
+          <SocialIcon url="https://github.com/borchand" fgColor="#F4F9F9"/>
         </div>
-      </div>    
+      </div>
+    </div>
   );
 }
 
